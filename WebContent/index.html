@@ -17,7 +17,6 @@ ul{
 }
 li{
 	float:left;
-	
 }
 li a{
 	display:block;
@@ -27,7 +26,6 @@ li a{
 	text-decoration:none;
 	font-size:18px;
 }
-
 li a:hover:not(.logo){
 	background-color:#111;
 }
@@ -36,22 +34,85 @@ li a:hover:not(.logo){
 	color:#ffff66;
 	font-size:19px;
 }
+.main{
+	width:100%;
+	height:89vh;
+	background:url("images/lib1.jpg");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	background-color:#646468;
+  background-blend-mode: screen;
+	margin-top:-20px;
+}
 .logo-heading{
 	text-align:center;
 	color: #6b00b3;
 	font-size:40px;
-border-bottom:1px solid #6b00b3;
-padding-bottom:5px;
-margin-left:auto;
-margin-right:auto;
-width:180px;
+	border-bottom:1px solid #6b00b3;
+	padding:5px;
+	margin-left:auto;
+	margin-right:auto;
+	width:190px;
+	background-color:#fbf3e4;
 }
 .sub-heading{
 	text-align:center;
 	color: #111;
 	font-size:15px;
-	margin-top:-20px;
+	width:230px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:-27px;
+	padding:5px 10px;
+	letter-spacing:1px;
+	background-color:#fbf3e4;
 }
+.panel{
+	background-color:rgba(204, 230, 255, 0.9);
+	width:30%;
+	height:360px;
+	margin-top:50px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:18px 30px;
+}
+.login-heading{
+	text-align:center;
+	font-size:30px;
+	font-weight:800;
+	color:#002966;
+}
+input{
+	width:95%;
+	height:30px;
+	border:1px solid gray;
+	border-radius: 5px;
+	padding:2px 10px;
+}
+label{
+	font-size:19px;
+margin-bottom:20px;
+}
+input[type=submit]{
+	background-color:#0077b3;
+	color:white;
+	font-weight:400;
+	font-size:17px;
+	width:80px;
+	padding:5px;
+	height:auto;
+	margin-top:20px;
+}
+.changelogin{
+	text-align:center;
+	font-size:17px;
+	color:#602020;
+	margin-top:30px;
+}
+.changelogin a{
+	color:#002966;
+}
+
 
 </style>
 </head>
@@ -63,7 +124,22 @@ width:180px;
 	<li><a href="">Librarian</a></li>
 </ul>
 
-<h1 class="logo-heading">e-Library</h1>
-<h3 class="sub-heading">Library Management System</h3>
+<div class="main">
+	<h1 class="logo-heading">e-Library</h1>
+	<h3 class="sub-heading">Library Management System</h3>
+	<div class="panel">
+		<p class="login-heading">Librarian Login</p>
+		<form>
+		<label for="user">Username</label><br>
+		<input type="text" name="user" placeholder="Enter username"><br><br>
+		<label for="password">Password</label><br>
+		<input type="password" name="pwd" placeholder="********"><br><br>
+		<input type="submit" value="Log In"><br>
+		<p class="changelogin">Not a librarian? <a href="adminlogin.html">Admin Login</a>
+		</form>
+	</div>
+</div>
+
+
 </body>
 </html>
