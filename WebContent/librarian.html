@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Librarian Section</title>
+<style>
+
+body{
+	background-color:#fbf3e4;
+}
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color: #333;
+}
+li{
+	float:left;
+}
+li a{
+	display:block;
+	color:white;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+	font-size:17px;
+}
+li a:not(.logo){
+	margin-top:2px;
+}
+li a:hover:not(.logo){
+	background-color:#111;
+}
+.logo{
+	margin:0px 20px;
+	color:#ffff66;
+	font-size:19px;
+}
+.main{
+	width:100%;
+	height:89vh;
+	background:url("images/lib2.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-color:#3e3e41;
+  	background-blend-mode: screen;
+  	margin-top:-15px;
+}
+.section-heading{
+	font-size:34px;
+	color:white;
+	padding:50px 20px 10px 70px;
+}
+.task{
+	background-color:rgba(255, 255, 255, 0.5);
+	width:180px;
+	margin-left:90px;
+	padding:5px 15px;
+}
+.task a{
+	color:black;
+	text-shadow: 2px 2px 4px white;
+	text-decoration:none;
+}
+
+
+</style>
+</head>
+<body>
+
+<ul>
+	<li><a href="index.html" class="logo"><b>e-Library</b></a></li>
+	<li><a href="">Home</a></li>
+	<li><a href="">Issue Book</a></li>
+	<li><a href="">View Issued Book</a></li>
+	<li><a href="">Return Book</a></li>
+	<li><a href="">Logout</a></li>
+</ul>
+
+<div class="main">
+	<h1 class="section-heading">Librarian Section</h1>
+	<h3 class="task"><a href="">- Add Book</a></h3>
+	<h3 class="task"><a href="">- View Book</a></h3>
+	<h3 class="task"><a href="">- Issue Book</a></h3>
+	<h3 class="task"><a href="">- View Issued Book</a></h3>
+	<h3 class="task"><a href="">- Return Book</a></h3>
+	<h3 class="task"><a href="">- Logout</a></h3>
+</div>
+
+
+</body>
+</html>
