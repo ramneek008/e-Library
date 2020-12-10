@@ -19,10 +19,11 @@ public class AdminLogin extends HttpServlet {
 		else
 		{
 			PrintWriter pw = res.getWriter();
-			pw.println("<h1>Username or password incorrect</h1>");
+			
 			RequestDispatcher rd = req.getRequestDispatcher("adminlogin.html");
 			rd.include(req, res);
-			
+
+			pw.println("<p style='color:red;text-align:center;width:100%;position:absolute;top:200px'>Username or password incorrect</p>");
 		}
 	}
 
