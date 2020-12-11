@@ -11,6 +11,16 @@
   <url-pattern>/adminlogin1</url-pattern>
  </servlet-mapping>
  
+ <servlet>
+  <servlet-name>addlibrarian</servlet-name>
+  <servlet-class>servlets.AddLibrarian</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>addlibrarian</servlet-name>
+  <url-pattern>/addlibrarian</url-pattern>
+ </servlet-mapping>
+ 
  
  <welcome-file-list>
   <welcome-file>index.html</welcome-file>
