@@ -7,7 +7,7 @@ import bean.LibrarianBean;
 
 public class LibrarianDao {
 	
-	public static int save(LibrarianBean bean)
+	public static int add(LibrarianBean bean)
 	{
 		int status=0;
 		try {
@@ -23,7 +23,24 @@ public class LibrarianDao {
 		{
 			System.out.println(e);
 		}
+		return status;	
+	}
+	
+	public static int edit(LibrarianBean bean)
+	{
+		int status=0;
+		try {
+			Connection con = DBConnectivity.getConnection();
+			PreparedStatement ps = con.prepareStatement("update HR.E_LIBRARIAN set name = ?, password = ?, mobile = ? where email = ?");
+			ps.setString(1, bean.getName());
+			ps.setString(2, bean.getPassword());
+			ps.setLong(3, bean.getMobile());
+			ps.setString(4, bean.getEmail());
+			status = ps.executeUpdate();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
 		return status;
-		
 	}
 }

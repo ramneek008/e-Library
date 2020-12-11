@@ -21,6 +21,16 @@
   <url-pattern>/addlibrarian</url-pattern>
  </servlet-mapping>
  
+ <servlet>
+  <servlet-name>editlibrarian</servlet-name>
+  <servlet-class>servlets.EditLibrarian</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>editlibrarian</servlet-name>
+  <url-pattern>/editlibrarian</url-pattern>
+ </servlet-mapping>
+ 
  
  <welcome-file-list>
   <welcome-file>index.html</welcome-file>
