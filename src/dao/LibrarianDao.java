@@ -46,7 +46,8 @@ public class LibrarianDao {
 		return status;
 	}
 	
-	public static ArrayList<LibrarianBean> view(){
+	public static ArrayList<LibrarianBean> view()
+	{
 		ArrayList<LibrarianBean> list = new ArrayList<LibrarianBean>();
 		try {
 			Connection con = DBConnectivity.getConnection();
@@ -66,5 +67,20 @@ public class LibrarianDao {
 			System.out.println(e);
 		}
 		return list;
+	}
+	
+	public static int delete(String email)
+	{
+		int status=0;
+		try {
+			Connection con = DBConnectivity.getConnection();
+			PreparedStatement ps = con.prepareStatement("delete from HR.E_LIBRARIAN where email = ?");
+			ps.setString(1, email);
+			status=ps.executeUpdate();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		return status;
 	}
 }
