@@ -14,11 +14,19 @@ public class LibrarianDao {
 		int status=0;
 		try {
 			Connection con = DBConnectivity.getConnection();
-			PreparedStatement ps = con.prepareStatement("insert into HR.E_LIBRARIAN values(?,?,?,?)");
-			ps.setString(1,bean.getName());
-			ps.setString(2, bean.getEmail());
-			ps.setString(3, bean.getPassword());
-			ps.setLong(4, bean.getMobile());
+			PreparedStatement ps = con.prepareStatement("select HR.SEQ_LIBRARIAN_ID.NEXTVAL from dual");
+			ResultSet rs = ps.executeQuery();
+			int id=0;
+			if(rs.next())
+			{
+				id = rs.getInt(1);
+			}
+			ps = con.prepareStatement("insert into HR.E_LIBRARIAN values(?,?,?,?,?)");
+			ps.setInt(1,id);
+			ps.setString(2,bean.getName());
+			ps.setString(3, bean.getEmail());
+			ps.setString(4, bean.getPassword());
+			ps.setLong(5, bean.getMobile());
 			status=ps.executeUpdate();			
 		}
 		catch(Exception e)
@@ -55,11 +63,12 @@ public class LibrarianDao {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next())
 			{
+				int id = rs.getInt("id");
 				String name = rs.getString("name");
 				String email = rs.getString("email");
 				String password = rs.getString("password");
 				long mobile = rs.getLong("mobile");
-				LibrarianBean bean = new LibrarianBean(name, email, password, mobile);
+				LibrarianBean bean = new LibrarianBean(id, name, email, password, mobile);
 				list.add(bean);
 			}
 		}
@@ -69,13 +78,13 @@ public class LibrarianDao {
 		return list;
 	}
 	
-	public static int delete(String email)
+	public static int delete(int id)
 	{
 		int status=0;
 		try {
 			Connection con = DBConnectivity.getConnection();
-			PreparedStatement ps = con.prepareStatement("delete from HR.E_LIBRARIAN where email = ?");
-			ps.setString(1, email);
+			PreparedStatement ps = con.prepareStatement("delete from HR.E_LIBRARIAN where id = ?");
+			ps.setInt(1, id);
 			status=ps.executeUpdate();
 		}
 		catch(Exception e) {

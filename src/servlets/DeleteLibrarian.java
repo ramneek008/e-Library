@@ -10,9 +10,8 @@ public class DeleteLibrarian extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException
 	{
-		String email = req.getParameter("email");
-		System.out.println(email);
-		LibrarianDao.delete(email);
+		int id = Integer.parseInt(req.getParameter("id"));
+		LibrarianDao.delete(id);
 		res.sendRedirect("viewLibrarian.jsp");
 	}
 }

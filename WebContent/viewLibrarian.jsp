@@ -91,12 +91,11 @@ th{
 <div class="main">
 	<h1>Librarians List</h1>
 	<table>
-	  <tr><th>S.No.</th><th>Name</th><th>Email</th><th>Password</th><th>Mobile Number</th><th>Edit</th><th>Delete</th></tr>
+	  <tr><th>ID</th><th>Name</th><th>Email</th><th>Password</th><th>Mobile Number</th><th>Edit</th><th>Delete</th></tr>
 		<%
 			ArrayList<LibrarianBean> list = LibrarianDao.view();
-			int i=0;
 			for(LibrarianBean bean: list){
-				out.println("<tr><td>"+ (++i) +"</td><td>" + bean.getName() + "</td><td>" + bean.getEmail() + "</td><td>" + bean.getPassword() + "</td><td>" + bean.getMobile() + "</td><td><a href='#'>Edit</a></td>" + "<td><a href='deletelibrarian?email=" + bean.getEmail() +"'>Delete</a></td></tr>");
+				out.println("<tr><td>"+ bean.getId() +"</td><td>" + bean.getName() + "</td><td>" + bean.getEmail() + "</td><td>" + bean.getPassword() + "</td><td>" + bean.getMobile() + "</td><td><a href='editLibrarian.html?id='" + bean.getId() +">Edit</a></td>" + "<td><a href='deletelibrarian?id=" + bean.getId() +"'>Delete</a></td></tr>");
 			}
 		%>
 	</table>

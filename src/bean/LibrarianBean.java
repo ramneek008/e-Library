@@ -5,6 +5,15 @@ public class LibrarianBean {
 	private String name, email, password;
 	private long mobile;
 	
+	public LibrarianBean(int id, String name, String email, String password, long mobile)
+	{
+		this.id=id;
+		this.name=name;
+		this.email=email;
+		this.password=password;
+		this.mobile=mobile;
+	}
+
 	public LibrarianBean(String name, String email, String password, long mobile)
 	{
 		this.name=name;
