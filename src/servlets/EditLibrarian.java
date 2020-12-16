@@ -1,9 +1,7 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -14,22 +12,16 @@ public class EditLibrarian extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
 	{
+		int id = Integer.parseInt(req.getParameter("id"));
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
 		String password = req.getParameter("pwd");
 		long mobile = Long.parseLong(req.getParameter("mob"));
 		
-		LibrarianBean bean = new LibrarianBean(name, email, password, mobile);
+		LibrarianBean bean = new LibrarianBean(id, name, email, password, mobile);
 		int t = LibrarianDao.edit(bean);
 		
-		PrintWriter pw = res.getWriter();
-		if(t==1)
-			pw.println("<p style='color:green;position:absolute;top:500px;left:250px'>Librarian updated succesfully</p>");
-		else
-			pw.println("<p style='color:red;position:absolute;top:500px;left:250px'>Try again</p>");
-		
-		RequestDispatcher rd = req.getRequestDispatcher("editLibrarian.html");
-		rd.include(req, res);
+		res.sendRedirect("viewLibrarian.jsp");
 		
 	}
 }

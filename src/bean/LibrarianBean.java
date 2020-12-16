@@ -5,6 +5,8 @@ public class LibrarianBean {
 	private String name, email, password;
 	private long mobile;
 	
+	public LibrarianBean() {}
+	
 	public LibrarianBean(int id, String name, String email, String password, long mobile)
 	{
 		this.id=id;

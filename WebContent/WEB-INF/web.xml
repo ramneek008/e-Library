@@ -32,6 +32,16 @@
  </servlet-mapping>
  
  <servlet>
+  <servlet-name>editlibrarianform</servlet-name>
+  <servlet-class>servlets.EditLibrarianForm</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>editlibrarianform</servlet-name>
+  <url-pattern>/editlibrarianform</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
   <servlet-name>deletelibrarian</servlet-name>
   <servlet-class>servlets.DeleteLibrarian</servlet-class>
  </servlet>

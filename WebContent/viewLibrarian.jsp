@@ -95,7 +95,7 @@ th{
 		<%
 			ArrayList<LibrarianBean> list = LibrarianDao.view();
 			for(LibrarianBean bean: list){
-				out.println("<tr><td>"+ bean.getId() +"</td><td>" + bean.getName() + "</td><td>" + bean.getEmail() + "</td><td>" + bean.getPassword() + "</td><td>" + bean.getMobile() + "</td><td><a href='editLibrarian.html?id='" + bean.getId() +">Edit</a></td>" + "<td><a href='deletelibrarian?id=" + bean.getId() +"'>Delete</a></td></tr>");
+				out.println("<tr><td>"+ bean.getId() +"</td><td>" + bean.getName() + "</td><td>" + bean.getEmail() + "</td><td>" + bean.getPassword() + "</td><td>" + bean.getMobile() + "</td><td><a href='editlibrarianform?id=" + bean.getId() +"'>Edit</a></td>" + "<td><a href='deletelibrarian?id=" + bean.getId() +"'>Delete</a></td></tr>");
 			}
 		%>
 	</table>

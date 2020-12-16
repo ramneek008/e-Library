@@ -41,11 +41,12 @@ public class LibrarianDao {
 		int status=0;
 		try {
 			Connection con = DBConnectivity.getConnection();
-			PreparedStatement ps = con.prepareStatement("update HR.E_LIBRARIAN set name = ?, password = ?, mobile = ? where email = ?");
+			PreparedStatement ps = con.prepareStatement("update HR.E_LIBRARIAN set name = ?, email = ?, password = ?, mobile = ? where id = ?");
 			ps.setString(1, bean.getName());
-			ps.setString(2, bean.getPassword());
-			ps.setLong(3, bean.getMobile());
-			ps.setString(4, bean.getEmail());
+			ps.setString(2, bean.getEmail());
+			ps.setString(3, bean.getPassword());
+			ps.setLong(4, bean.getMobile());
+			ps.setInt(5, bean.getId());
 			status = ps.executeUpdate();
 		}
 		catch(Exception e) {
@@ -91,5 +92,27 @@ public class LibrarianDao {
 			System.out.println(e);
 		}
 		return status;
+	}
+	
+	public static LibrarianBean viewById(int id)
+	{
+		LibrarianBean bean = new LibrarianBean();
+		try {
+			Connection con = DBConnectivity.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from HR.E_LIBRARIAN where id = ? ");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next())
+			{
+				bean.setId(rs.getInt(1));
+				bean.setName(rs.getString(2));
+				bean.setEmail(rs.getString(3));
+				bean.setPassword(rs.getString(4));
+				bean.setMobile(rs.getLong(5));
+			}
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return bean;
 	}
 }
