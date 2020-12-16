@@ -8,10 +8,10 @@ public class AdminLogin extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
 	{
-		String user = req.getParameter("user");
+		String email = req.getParameter("email");
 		String pwd = req.getParameter("pwd");
 		
-		if(user.equals("admin1") && pwd.equals("123456"))
+		if(email.equals("admin1@gmail.com") && pwd.equals("123456"))
 		{
 			RequestDispatcher rd = req.getRequestDispatcher("admin.html");
 			rd.include(req,res);
@@ -23,7 +23,7 @@ public class AdminLogin extends HttpServlet {
 			RequestDispatcher rd = req.getRequestDispatcher("adminlogin.html");
 			rd.include(req, res);
 
-			pw.println("<p style='color:red;text-align:center;width:100%;position:absolute;top:200px'>Username or password incorrect</p>");
+			pw.println("<p style='color:red;text-align:center;width:99%;position:absolute;top:200px'>Email or password incorrect</p>");
 		}
 	}
 
