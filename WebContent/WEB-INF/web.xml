@@ -5,7 +5,6 @@
   <servlet-name>adminlogin</servlet-name>
   <servlet-class>servlets.AdminLogin</servlet-class>
  </servlet>
- 
  <servlet-mapping>
   <servlet-name>adminlogin</servlet-name>
   <url-pattern>/adminlogin1</url-pattern>
@@ -15,7 +14,6 @@
   <servlet-name>addlibrarian</servlet-name>
   <servlet-class>servlets.AddLibrarian</servlet-class>
  </servlet>
- 
  <servlet-mapping>
   <servlet-name>addlibrarian</servlet-name>
   <url-pattern>/addlibrarian</url-pattern>
@@ -25,7 +23,6 @@
   <servlet-name>editlibrarian</servlet-name>
   <servlet-class>servlets.EditLibrarian</servlet-class>
  </servlet>
- 
  <servlet-mapping>
   <servlet-name>editlibrarian</servlet-name>
   <url-pattern>/editlibrarian</url-pattern>
@@ -35,7 +32,6 @@
   <servlet-name>editlibrarianform</servlet-name>
   <servlet-class>servlets.EditLibrarianForm</servlet-class>
  </servlet>
- 
  <servlet-mapping>
   <servlet-name>editlibrarianform</servlet-name>
   <url-pattern>/editlibrarianform</url-pattern>
@@ -45,10 +41,18 @@
   <servlet-name>deletelibrarian</servlet-name>
   <servlet-class>servlets.DeleteLibrarian</servlet-class>
  </servlet>
- 
  <servlet-mapping>
   <servlet-name>deletelibrarian</servlet-name>
   <url-pattern>/deletelibrarian</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>librarianlogin</servlet-name>
+  <servlet-class>servlets.LibrarianLogin</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>librarianlogin</servlet-name>
+  <url-pattern>/librarianlogin</url-pattern>
  </servlet-mapping>
  
  <welcome-file-list>

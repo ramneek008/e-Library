@@ -5,6 +5,7 @@
 <title>e-Library</title>
 <style>
 
+
 body{
 	background-color:#fbf3e4;
 }
@@ -70,7 +71,7 @@ li a:hover:not(.logo){
 .panel{
 	background-color:rgba(204, 230, 255, 0.9);
 	width:30%;
-	height:auto;
+	height:360px;
 	margin-top:50px;
 	margin-left:auto;
 	margin-right:auto;
@@ -129,9 +130,9 @@ input[type=submit]{
 	<h3 class="sub-heading">Library Management System</h3>
 	<div class="panel">
 		<p class="login-heading">Librarian Login</p>
-		<form>
-		<label for="user">Username</label><br>
-		<input type="text" name="user" placeholder="Enter username"><br><br>
+		<form action="librarianlogin" method="post">
+		<label for="email">Email</label><br>
+		<input type="email" name="email" placeholder="Enter email"><br><br>
 		<label for="password">Password</label><br>
 		<input type="password" name="pwd" placeholder="********"><br><br>
 		<input type="submit" value="Log In"><br>
