@@ -18,17 +18,21 @@ public class AddLibrarian extends HttpServlet{
 		String email = req.getParameter("email");
 		String password = req.getParameter("pwd");
 		long mobile = Long.parseLong(req.getParameter("mob"));
+		
 		LibrarianBean bean = new LibrarianBean(name, email, password, mobile);
-		int t=LibrarianDao.add(bean);
+		int status =LibrarianDao.add(bean);
 		
 		PrintWriter pw = res.getWriter();
-		if(t==1)
-			pw.println("<p style='color:green;position:absolute;top:500px;left:250px'>Librarian added succesfully</p>");
-		else
-			pw.println("<p style='color:red;position:absolute;top:500px;left:250px'>Try again</p>");
 		
 		RequestDispatcher rd = req.getRequestDispatcher("addLibrarian.html");
 		rd.include(req, res);
+		
+		if(status==1)
+			pw.println("<p style='color:green;position:absolute;top:505px;left:250px'>Librarian added succesfully</p>");
+		else
+			pw.println("<p style='color:red;position:absolute;top:505px;left:250px'>Try again</p>");
+		
+		
 		
 		
 			
