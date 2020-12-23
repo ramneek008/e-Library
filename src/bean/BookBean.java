@@ -5,6 +5,7 @@ public class BookBean {
 	private String callno, name, author, publisher;
 	private int quantity, issued;
 	
+	public BookBean(){}
 	
 	public BookBean(String callno, String name, String author, String publisher, int quantity)
 	{
