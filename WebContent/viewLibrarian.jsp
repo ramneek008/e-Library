@@ -69,7 +69,7 @@ table{
 }
 tr,td,th{
 	border:1px solid white;
-	padding:8px 0px;
+	padding:8px 4px;
 }
 th{
 	background-color:rgba(255,255,255,0.9);

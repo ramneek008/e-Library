@@ -64,6 +64,15 @@
   <url-pattern>/addbook</url-pattern>
  </servlet-mapping>
  
+ <servlet>
+  <servlet-name>deletebook</servlet-name>
+  <servlet-class>servlets.DeleteBook</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>deletebook</servlet-name>
+  <url-pattern>/deletebook</url-pattern>
+ </servlet-mapping>
+ 
  <welcome-file-list>
   <welcome-file>index.html</welcome-file>
  </welcome-file-list>

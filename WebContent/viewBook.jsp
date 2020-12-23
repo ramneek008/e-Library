@@ -59,7 +59,7 @@ h1{
 }
 table{
 	border:1px solid white;
-	width:75%;
+	width:80%;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:20px;
@@ -69,7 +69,7 @@ table{
 }
 tr,td,th{
 	border:1px solid white;
-	padding:8px 0px;
+	padding:8px 4px;
 }
 th{
 	background-color:rgba(255,255,255,0.9);
@@ -100,7 +100,7 @@ a{
 	  <%
 	  	ArrayList<BookBean> list = BookDao.view();
 	  	for(BookBean bean : list){
-	  		out.println("<tr><td>" + bean.getCallno() + "</td><td>" + bean.getName() + "</td><td>" + bean.getAuthor() + "</td><td>" + bean.getPublisher() + "</td><td>" + bean.getQuantity() + "</td><td>" + bean.getIssued() + "</td><td><a href=''>Delete</a></td></tr>");
+	  		out.println("<tr><td>" + bean.getCallno() + "</td><td>" + bean.getName() + "</td><td>" + bean.getAuthor() + "</td><td>" + bean.getPublisher() + "</td><td>" + bean.getQuantity() + "</td><td>" + bean.getIssued() + "</td><td><a href='deletebook?callno=" + bean.getCallno() + "'>Delete</a></td></tr>");
 	  	}
 	  %>
 	</table>

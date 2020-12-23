@@ -49,9 +49,22 @@ public class BookDao {
 		} catch(Exception e) {
 			System.out.println(e);
 		}
-		
-		return list;
-		
+		return list;	
+	}
+	
+	public static int delete(String callno)
+	{
+		int status = 0;
+		try {
+			Connection con = DBConnectivity.getConnection();
+			PreparedStatement ps = con.prepareStatement("delete from HR.E_BOOK where callno = ?");
+			ps.setString(1, callno);
+			status = ps.executeUpdate();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		return status;
 	}
 
 }
