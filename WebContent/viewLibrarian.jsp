@@ -43,13 +43,14 @@ li a:hover:not(.logo){
 }
 .main{
 	width:100%;
-	height:89vh;
+	min-height:79vh;
 	background:url("images/lib2.jpg");
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-color:#3e3e41;
   	background-blend-mode: screen;
   	margin-top:-15px;
+  	padding-bottom:10vh;
 }
 h1{
 	font-size:34px;
@@ -63,7 +64,7 @@ table{
 	margin-right:auto;
 	margin-top:20px;
 	border-collapse:collapse;
-	background-color:rgba(255,255,255,0.6);
+	background-color:rgba(255,255,255,0.8);
 	text-align:center;
 }
 tr,td,th{
@@ -71,7 +72,7 @@ tr,td,th{
 	padding:8px 0px;
 }
 th{
-	background-color:rgba(255,255,255,0.7);
+	background-color:rgba(255,255,255,0.9);
 	font-size:17px;
 }
 a{
