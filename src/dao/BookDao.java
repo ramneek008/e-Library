@@ -141,5 +141,30 @@ public class BookDao {
 			return 0;
 		
 	}
+	
+	public static ArrayList<IssueBookBean> viewIssuedBooks()
+	{
+		ArrayList<IssueBookBean> list = new ArrayList<IssueBookBean>();
+		try {
+			Connection con = DBConnectivity.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from HR.E_ISSUEBOOK");
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				IssueBookBean bean = new IssueBookBean();
+				bean.setcallno(rs.getString("callno"));
+				bean.setStudentid(rs.getString("studentid"));
+				bean.setStudentname(rs.getString("studentname"));
+				bean.setStudentmobile(rs.getLong("studentmobile"));
+				bean.setIssueddate(rs.getDate("issueddate"));
+				bean.setReturnstatus(rs.getString("returnstatus"));
+				list.add(bean);
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		return list;
+	}
 
 }
