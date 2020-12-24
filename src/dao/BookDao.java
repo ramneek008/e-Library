@@ -129,7 +129,7 @@ public class BookDao {
 					PreparedStatement ps2 = con.prepareStatement("update HR.E_BOOK set issued = ? where callno = ?");
 					ps2.setInt(1, issueCount(callno)+1);
 					ps2.setString(2, callno);
-					status=ps.executeUpdate();
+					status=ps2.executeUpdate();
 				}
 			}
 			catch(Exception e) {
