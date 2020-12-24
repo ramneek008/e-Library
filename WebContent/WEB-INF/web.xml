@@ -73,6 +73,15 @@
   <url-pattern>/deletebook</url-pattern>
  </servlet-mapping>
  
+ <servlet>
+  <servlet-name>issuebook</servlet-name>
+  <servlet-class>servlets.IssueBook</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>issuebook</servlet-name>
+  <url-pattern>/issuebook</url-pattern>
+ </servlet-mapping>
+ 
  <welcome-file-list>
   <welcome-file>index.html</welcome-file>
  </welcome-file-list>

@@ -4,26 +4,26 @@ import java.sql.Date;
 
 public class IssueBookBean {
 
-	private String bookcallno, studentid, studentname;
+	private String callno, studentid, studentname;
 	private long studentmobile;
 	private Date issueddate;
 	private String returnstatus;
 	
 	public IssueBookBean() {}
 	
-	public IssueBookBean(String bookcallno, String studentid, String studentname, long studentmobile)
+	public IssueBookBean(String callno, String studentid, String studentname, long studentmobile)
 	{
-		this.bookcallno = bookcallno;
+		this.callno = callno;
 		this.studentid = studentid;
 		this.studentname = studentname;
 		this.studentmobile = studentmobile;
 	}
 	
-	public String getBookcallno() {
-		return bookcallno;
+	public String getcallno() {
+		return callno;
 	}
-	public void setBookcallno(String bookcallno) {
-		this.bookcallno = bookcallno;
+	public void setcallno(String callno) {
+		this.callno = callno;
 	}
 	public String getStudentid() {
 		return studentid;
