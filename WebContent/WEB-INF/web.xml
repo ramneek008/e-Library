@@ -82,6 +82,15 @@
   <url-pattern>/issuebook</url-pattern>
  </servlet-mapping>
  
+ <servlet>
+  <servlet-name>returnbook</servlet-name>
+  <servlet-class>servlets.ReturnBook</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>returnbook</servlet-name>
+  <url-pattern>/returnbook</url-pattern>
+ </servlet-mapping>
+ 
  <welcome-file-list>
   <welcome-file>index.html</welcome-file>
  </welcome-file-list>

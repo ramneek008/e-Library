@@ -166,5 +166,29 @@ public class BookDao {
 		}
 		return list;
 	}
+	
+	public static int returnBook(String callno, String studentid)
+	{
+		int status=0;
+		try {
+			Connection con = DBConnectivity.getConnection();
+			PreparedStatement ps = con.prepareStatement("update HR.E_ISSUEBOOK set returnstatus = 'Yes' where callno = ? and studentid = ?");
+			ps.setString(1, callno);
+			ps.setString(2, studentid);
+			status = ps.executeUpdate();
+			
+			if(status==1)
+			{
+				PreparedStatement ps2 = con.prepareStatement("update HR.E_BOOK set issued = ? where callno = ?");
+				ps2.setInt(1, issueCount(callno)-1);
+				ps2.setString(2, callno);
+				status=ps2.executeUpdate();
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		return status;
+	}
 
 }
