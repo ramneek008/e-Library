@@ -9,7 +9,7 @@ public class DBConnectivity {
 	static {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "SYSTEM", "D@ta00Found");  //Enter your password
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "SYSTEM", "123456");  //Enter your password
 			System.out.println("Connection done");
 		} catch (Exception e) {
 			System.out.println(e);
