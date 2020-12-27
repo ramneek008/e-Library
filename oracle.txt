@@ -1,0 +1,33 @@
+1. CREATING TABLE "E_LIBRARIAN" :
+	create table E_LIBRARIAN(
+	    id number PRIMARY KEY,
+	    name varchar2(4000),
+	    email varchar2(4000),
+	    password varchar2(4000),
+	    mobile number
+        );
+
+2. CREATING SEQUENCE "SEQ_LIBRARIAN_ID" :
+        create sequence SEQ_LIBRARIAN_ID
+        START WITH 1000
+	INCREMENT BY 1;
+
+3. CREATING TABLE "E_BOOK" :
+	create table E_BOOK(
+	    callno varchar2(4000) PRIMARY KEY,
+	    name varchar2(4000),
+	    author varchar2(4000),
+	    publisher varchar2(4000),
+	    quantity number,
+	    issued number
+	);
+
+4. CREATING TABLE "E_ISSUEBOOK" :
+	create table E_ISSUEBOOK(
+	    callno varchar2(4000) NOT NULL,
+	    studentid varchar2(4000) NOT NULL,
+ 	    studentname varchar2(4000) NOT NULL,
+	    studentmobile number,
+	    issueddate date,
+	    returnstatus varchar2(4000)
+	);
