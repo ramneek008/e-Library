@@ -84,12 +84,12 @@ a{
 <body>
 
 <ul>
-	<li><a href="index.html" class="logo"><b>e-Library</b></a></li>
-	<li><a href="">Home</a></li>
-	<li><a href="">Issue Book</a></li>
-	<li><a href="">View Issued Book</a></li>
-	<li><a href="">Return Book</a></li>
-	<li><a href="">Logout</a></li>
+	<li><a href="#" class="logo"><b>e-Library</b></a></li>
+	<li><a href="librarian.html">Home</a></li>
+	<li><a href="addBook.html">Add Book</a></li>
+	<li><a href="issueBook.html">Issue Book</a></li>
+	<li><a href="returnBook.html">Return Book</a></li>
+	<li><a href="index.html">Logout</a></li>
 </ul>
 
 <div class="main">
