@@ -60,7 +60,7 @@ public class LibrarianDao {
 		ArrayList<LibrarianBean> list = new ArrayList<LibrarianBean>();
 		try {
 			Connection con = DBConnectivity.getConnection();
-			PreparedStatement ps = con.prepareStatement("select * from HR.E_LIBRARIAN");
+			PreparedStatement ps = con.prepareStatement("select * from HR.E_LIBRARIAN order by id");
 			ResultSet rs = ps.executeQuery();
 			while(rs.next())
 			{
