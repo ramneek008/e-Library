@@ -36,7 +36,7 @@ public class BookDao {
 		ArrayList<BookBean> list = new ArrayList<BookBean>();
 		try {
 			Connection con = DBConnectivity.getConnection();
-			PreparedStatement ps = con.prepareStatement("select * from HR.E_BOOK");
+			PreparedStatement ps = con.prepareStatement("select * from HR.E_BOOK order by callno");
 			ResultSet rs= ps.executeQuery();
 			while(rs.next()) {
 				BookBean bean = new BookBean();
@@ -147,7 +147,7 @@ public class BookDao {
 		ArrayList<IssueBookBean> list = new ArrayList<IssueBookBean>();
 		try {
 			Connection con = DBConnectivity.getConnection();
-			PreparedStatement ps = con.prepareStatement("select * from HR.E_ISSUEBOOK");
+			PreparedStatement ps = con.prepareStatement("select * from HR.E_ISSUEBOOK order by issueddate desc");
 			ResultSet rs = ps.executeQuery();
 			while(rs.next())
 			{
